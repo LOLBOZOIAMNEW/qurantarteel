@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/quran.css">
+<link rel="stylesheet" href="/static/css/audio-player.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+
+    <div class="controls-bar">
+
+        <div class="controls-group">
+            <div class="control-label">Surah</div>
+            <select id="surahSelect">
+                <option value="-1">Practice Bismillah</option>
+                {% for surah in surahs %}
+                    <option value="{{ loop.index0 }}">{{ surah.id }} - {{ surah.name_simple }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="controls-group">
+            <div class="control-label">Ayah</div>
+            <input type="number" id="ayahInput" min="1">
+        </div>
+
+        <div class="controls-group">
+            <div class="control-label">Reciter</div>
+            <select id="reciterSelect">
+                {% for r in reciters %}
+                    <option value="{{ r.id }}" {% if r.id == 2 %}selected{% endif %}>{{ r.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="primary-btn" id="playSurahBtn">▶ Play Surah</button>
+
+    </div>
+
+    <div class="reader-card">
+        <div class="surah-container" id="surahDisplay"></div>
+    </div>
+
+</div>
+
+<div id="audioBar">
+    <div id="audioControls">
+        <button id="prevAyahBtn">◀</button>
+        <button id="playPauseBtn">▶</button>
+        <button id="nextAyahBtn">▶▶</button>
+        <button class="auto-btn" id="autoPlayToggle">Auto‑Play</button>
+    </div>
+
+    <div id="progressContainer">
+        <span id="currentTime">0:00</span>
+        <div id="progressBar">
+            <div id="progressFill"></div>
+        </div>
+        <span id="duration">0:00</span>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/api.js"></script>
+<script src="/static/js/quran.js"></script>
+<script src="/static/js/audio-player.js"></script>
+{% endblock %}

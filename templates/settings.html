@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/settings.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="settings-container">
+
+    <h2 class="settings-title">Settings</h2>
+    <p class="settings-subtitle">Customize your Quran Tutor experience</p>
+
+    <div class="settings-section">
+
+        <!-- THEME -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div class="settings-card-icon">🌗</div>
+                <div class="settings-card-title">Theme</div>
+            </div>
+            <div class="settings-card-body">
+                <label class="settings-toggle">
+                    <span>Enable Light Mode</span>
+                    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+                </label>
+            </div>
+        </div>
+
+        <!-- RECITER -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div class="settings-card-icon">🎧</div>
+                <div class="settings-card-title">Reciter</div>
+            </div>
+            <div class="settings-card-body">
+                <select id="settingsReciter" onchange="saveReciterPreference()">
+                    {% for r in reciters %}
+                        <option value="{{ r.id }}">{{ r.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- FONT SIZE -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div class="settings-card-icon">🔤</div>
+                <div class="settings-card-title">Arabic Font Size</div>
+            </div>
+            <div class="settings-card-body">
+                <label class="settings-toggle">
+                    <span>Larger Arabic Text</span>
+                    <input type="checkbox" id="fontToggle" onchange="toggleFontSize()">
+                </label>
+            </div>
+        </div>
+
+        <!-- WORD BY WORD -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div class="settings-card-icon">📝</div>
+                <div class="settings-card-title">Word-by-Word</div>
+            </div>
+            <div class="settings-card-body">
+                <label class="settings-toggle">
+                    <span>Enable Word-by-Word</span>
+                    <input type="checkbox" id="wordToggle" onchange="toggleWords()" checked>
+                </label>
+            </div>
+        </div>
+
+        <!-- TRANSLATION -->
+        <div class="settings-card">
+            <div class="settings-card-header">
+                <div class="settings-card-icon">🌍</div>
+                <div class="settings-card-title">Translation</div>
+            </div>
+            <div class="settings-card-body">
+                <label class="settings-toggle">
+                    <span>Show English Translation</span>
+                    <input type="checkbox" id="translationToggle" onchange="toggleTranslation()" checked>
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/main.js"></script>
+{% endblock %}

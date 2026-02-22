@@ -1,0 +1,72 @@
+#audioBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 95px;
+    background: var(--player-bg);
+    border-top: 1px solid var(--player-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 25px;
+    z-index: 9999;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+}
+
+body.dark {
+    --player-bg: var(--player-bg-dark);
+    --player-border: var(--player-border-dark);
+    --player-text: white;
+}
+
+body.light {
+    --player-bg: var(--player-bg-light);
+    --player-border: var(--player-border-light);
+    --player-text: #0f172a;
+}
+
+#audioControls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#audioControls button {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--player-text);
+    cursor: pointer;
+}
+
+.auto-btn {
+    font-size: 13px;
+}
+
+#progressContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+#progressBar {
+    flex-grow: 1;
+    height: 6px;
+    background: #334155;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+
+body.light #progressBar {
+    background: #cbd5e1;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    border-radius: 4px;
+}

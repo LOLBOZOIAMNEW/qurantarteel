@@ -1,0 +1,88 @@
+.settings-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.settings-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.settings-subtitle {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.settings-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.settings-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: 0.25s;
+}
+
+body.light .settings-card {
+    background: white;
+    border-color: var(--border-subtle-light);
+}
+
+.settings-card:hover {
+    transform: translateY(-3px);
+}
+
+.settings-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.settings-card-icon {
+    font-size: 26px;
+}
+
+.settings-card-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.settings-card-body {
+    margin-top: 10px;
+}
+
+.settings-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.settings-toggle input {
+    transform: scale(1.2);
+}
+
+.settings-card-body select {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle-dark);
+    background: #020617;
+    color: white;
+    font-size: 14px;
+}
+
+body.light .settings-card-body select {
+    background: white;
+    border-color: var(--border-subtle-light);
+    color: var(--text-dark);
+}

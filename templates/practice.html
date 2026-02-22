@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/practice.css">
+<link rel="stylesheet" href="/static/css/word-click.css">
+{% endblock %}
+
+{% block content %}
+
+<div id="practice-page" class="practice-container">
+
+    <h2 class="practice-title">Recitation Practice</h2>
+    <p class="practice-subtitle">
+        Choose a surah and ayah, listen to the reference, then recite and let the system compare.
+    </p>
+
+    <div class="practice-controls">
+
+        <div class="practice-group">
+            <div class="control-label">Surah</div>
+            <select id="practiceSurahSelect">
+                {% for surah in surahs %}
+                    <option value="{{ loop.index0 }}">{{ surah.id }} - {{ surah.name_simple }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="practice-group">
+            <div class="control-label">Ayah</div>
+            <input type="number" id="practiceAyahInput" min="1" value="1">
+        </div>
+
+        <div class="practice-group">
+            <div class="control-label">Reciter</div>
+            <select id="practiceReciterSelect">
+                {% for r in reciters %}
+                    <option value="{{ r.id }}" {% if r.id == 2 %}selected{% endif %}>{{ r.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="primary-btn" id="loadPracticeAyahBtn">Load Ayah</button>
+    </div>
+
+    <div class="practice-card" id="practiceReferenceCard">
+        <div class="practice-ref-header">
+            <span class="practice-ref-label">Reference Ayah</span>
+            <button class="small-btn" id="playReferenceBtn">▶ Play Reference</button>
+        </div>
+        <div class="practice-arabic" id="practiceArabic"></div>
+        <div class="practice-english" id="practiceEnglish"></div>
+    </div>
+
+    <div class="practice-card">
+        <div class="practice-ref-header">
+            <span class="practice-ref-label">Your Recitation</span>
+
+            <div class="practice-rec-buttons">
+                <button class="small-btn mic-off" id="startRecBtn">● Start Recording</button>
+                <button class="small-btn stop-off" id="stopRecBtn" disabled>■ Stop</button>
+            </div>
+        </div>
+
+        <div class="practice-status" id="practiceStatus">Not recording</div>
+        <div class="practice-transcript-label">Detected transcript (Arabic):</div>
+        <div class="practice-transcript" id="practiceTranscript"></div>
+    </div>
+
+    <div class="practice-card">
+        <div class="practice-ref-header">
+            <span class="practice-ref-label">Result</span>
+            <button class="small-btn" id="checkRecitationBtn">Check Accuracy</button>
+        </div>
+
+        <div class="practice-result" id="practiceResult"></div>
+
+        <div class="practice-score" id="practiceScore">Score: --%</div>
+
+        <div id="practicePhrase" class="practice-phrase"></div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/recorder.js"></script>
+<script src="/static/js/practice.js"></script>
+<script src="/static/js/word-audio.js"></script>
+<script src="/static/js/scoring.js"></script>
+<script src="/static/js/api.js"></script>
+{% endblock %}

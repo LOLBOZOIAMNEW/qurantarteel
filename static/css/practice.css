@@ -1,0 +1,156 @@
+.practice-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.practice-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.practice-subtitle {
+    font-size: 15px;
+    opacity: 0.75;
+    margin-bottom: 24px;
+}
+
+.practice-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(31, 41, 55, 0.9);
+    margin-bottom: 20px;
+}
+
+body.light .practice-controls {
+    background: white;
+    border-color: var(--border-subtle-light);
+}
+
+.practice-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.practice-group select,
+.practice-group input {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #1f2937;
+    background: #020617;
+    color: var(--text-light);
+    font-size: 13px;
+    outline: none;
+}
+
+body.light .practice-group select,
+body.light .practice-group input {
+    background: white;
+    border-color: var(--border-subtle-light);
+    color: var(--text-dark);
+}
+
+.practice-card {
+    background: rgba(15, 23, 42, 0.96);
+    border-radius: 16px;
+    border: 1px solid rgba(31, 41, 55, 0.9);
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+body.light .practice-card {
+    background: white;
+    border-color: var(--border-subtle-light);
+}
+
+.practice-ref-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.practice-ref-label {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.small-btn {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: transparent;
+    color: inherit;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.practice-arabic {
+    font-size: 26px;
+    direction: rtl;
+    line-height: 2.1;
+    margin-top: 4px;
+}
+
+.practice-english {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 6px;
+}
+
+.practice-status {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.practice-transcript-label {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.practice-transcript {
+    min-height: 40px;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+/* SCORING COLORS */
+.correct-word {
+    text-decoration: underline;
+    text-decoration-color: #22c55e;
+    text-decoration-thickness: 3px;
+}
+
+.close-word {
+    text-decoration: underline;
+    text-decoration-color: #facc15;
+    text-decoration-thickness: 3px;
+}
+
+.wrong-word {
+    text-decoration: underline;
+    text-decoration-color: #ef4444;
+    text-decoration-thickness: 3px;
+}
+
+.extra-word {
+    text-decoration: underline;
+    text-decoration-color: #9ca3af;
+    text-decoration-thickness: 3px;
+}
+
+.missing-word {
+    text-decoration: line-through;
+    text-decoration-color: #ef4444;
+    text-decoration-thickness: 3px;
+}

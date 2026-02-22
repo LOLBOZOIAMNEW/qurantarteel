@@ -1,0 +1,21 @@
+.clickable-word {
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.clickable-word:hover {
+    background-color: rgba(0, 150, 255, 0.12);
+}
+
+.word-playing {
+    background-color: rgba(0, 150, 255, 0.25);
+    color: #005a9e;
+    animation: pulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    from { background-color: rgba(0, 150, 255, 0.20); }
+    to   { background-color: rgba(0, 150, 255, 0.35); }
+}

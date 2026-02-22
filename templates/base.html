@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ title if title else "Quran Tutor" }}</title>
+
+<!-- GLOBAL CSS -->
+<link rel="stylesheet" href="/static/css/global.css">
+
+<!-- PAGE-SPECIFIC CSS (loaded dynamically in each page) -->
+{% block styles %}{% endblock %}
+
+</head>
+
+<body class="dark">
+
+<header class="app-header">
+    <div class="header-left">
+        <a href="/" class="logo">Quran Tutor</a>
+    </div>
+    <div class="header-right">
+        <button class="icon-button" onclick="toggleTheme()">🌗</button>
+    </div>
+</header>
+
+<main class="page-content">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- GLOBAL JS -->
+<script src="/static/js/main.js"></script>
+<script src="/static/js/utils.js"></script>
+
+<!-- PAGE-SPECIFIC JS -->
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

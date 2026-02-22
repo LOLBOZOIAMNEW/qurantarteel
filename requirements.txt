@@ -1,0 +1,6 @@
+Flask
+gunicorn
+requests
+faster-whisper
+numpy
+torch
